@@ -167,7 +167,7 @@
     left: 50%;
     transform: translate(-50%, -50%); }
   
-  .btn {
+  ._btn {
     position: absolute;
     color: #ef7147;
     background: #eeeeee;
@@ -181,23 +181,9 @@
     border: 1px solid #ccc;
     border-left: none; }
   
-  .fa-home::before {
-    content: "\f015"; }
-  
-  .fa-birthday-cake::before {
-    content: "\f1fd"; }
-  
-  .fa-info-circle::before {
-    content: "\f05a"; }
-  
-  .fa-pencil-square-o {
-    content: "\f044"; }
-  
-  .fa-phone {
-    content: "\f095"; }
-  
+
   .navbar-dark .navbar-nav .nav-item {
-    padding: 10px 17px;
+    padding: 10px 16px;
     border-radius: 10px; }
   
   .navbar-dark .navbar-nav .nav-item:hover {
@@ -291,7 +277,7 @@
   .instagram:hover .fa-instagram {
     color: #fff !important; }
   
-  .footerr form input[type="text"] {
+  .footer-input {
     border-radius: 4px;
     height: 34px;
     width: 100%;
@@ -303,7 +289,7 @@
     font-size: 14px;
     outline: none; }
   
-  .footerr form input[type="button"] {
+  .footer-button {
     width: 100px;
     height: 34px;
     border-radius: 4px;
@@ -313,9 +299,10 @@
     border: 1px solid #ef7147;
     transition: 0.3s; }
   
-  .footerr form input[type="button"]:hover {
+  .footer-button:hover {
     background: #fff;
-    color: #ef7147; }
+    color: #ef7147; 
+    border: 1px solid #ef7147;}
   
   @media only screen and (max-width: 1200px) {
     .navbar-dark .navbar-nav .nav-item {

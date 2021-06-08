@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slug = require('mongoose-slug-generator')
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
@@ -9,6 +10,7 @@ const Course = new Schema({
     image: { type: String },
     videoid: { type: String },
     level: { type: String },
+    slug: { type: String, slug: 'name', unique: true }
 }, {
     timestamps: true
 });

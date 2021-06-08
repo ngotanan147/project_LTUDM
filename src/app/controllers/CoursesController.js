@@ -19,13 +19,15 @@ class CoursesController {
 
     // [POST] courses/store
     store(req, res, next) {
-        // const formData = req.body
-        // console.log(req.body)
-        // formData.img = `https://img.youtube.com/vi/${formData.videoid}/sddefault.jpg`
-        // const course = new Course(formData)
-        // course.save()
+        // res.json(req.body)
 
-        res.json(req.body)
+        const formData = req.body
+        formData.image = `https://img.youtube.com/vi/${formData.videoid}/sddefault.jpg`
+
+        const course = new Course(formData)
+        course.save()
+
+        res.send("Course save!")
     }
 }
 
