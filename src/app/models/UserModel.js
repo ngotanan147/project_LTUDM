@@ -14,4 +14,6 @@ const User = new Schema({
     timestamps: true
 });
 
+User.set('toObject', { virtuals: true })
+
 module.exports = mongoose.model('User', User)

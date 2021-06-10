@@ -9,7 +9,7 @@ class LoginController {
         if (req.session.loggedIn == true) {
             res.redirect('/')
         } else {
-            res.render("login")
+            res.render('login', {layout: 'main.hbs'})
         }
 
     }

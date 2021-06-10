@@ -1,7 +1,7 @@
 
 class LogoutController {
     index(req, res, next) {
-        req.session.destroy()
+        req.session.loggedIn = false
         res.redirect('/')
     }
 }

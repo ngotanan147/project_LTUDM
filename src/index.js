@@ -15,11 +15,6 @@ route(app)
 app.use(express.static(path.join(__dirname, 'public')))
 //
 
-//HTTP loggers
-// app.use(morgan('combined'))
-//
-
-
 //Handlebars setup
 app.engine('hbs', handlebars({
   extname: '.hbs'
