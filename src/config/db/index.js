@@ -6,6 +6,7 @@ async function connect() {
             useUnifiedTopology: true,
             useNewUrlParser: true
         });
+        mongoose.set('useFindAndModify', false);
         console.log("Database connected!!!")
     } catch (e) {
         console.log(e)

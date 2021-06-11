@@ -10,27 +10,41 @@
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary add-button" data-toggle="modal"
+                    data-target="#exampleModal">
                     Add item
                 </button>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>ID</th>
                                     <th>Email</th>
+                                    <th>Avatar</th>
                                     <th>Role</th>
                                     <th>Function</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {{#each user}}
-                                <tr>
-                                    <td>{{this._id}}</td>
-                                    <td>{{this.email}}</td>
-                                    <td>{{this.level}}</td>
-                                    <td>Hello</td>
+                                <tr id="{{this._id}}_row">
+                                    <td class="{{this._id}}_id">{{this._id}}</td>
+                                    <td class="{{this._id}}_email">{{this.email}}</td>
+                                    <td class="text-center"><img style="width: 75px; height: 75px"
+                                            src="img/{{this.avatar}}" alt=""></td>
+                                    <td class="{{this._id}}_level">{{this.level}}</td>
+                                    <td class="d-flex justify-content-around">
+                                        <a href="" class="update-btn" data-id="{{this._id}}" data-toggle="modal"
+                                            data-target="#exampleModal2">
+                                            <i style="color:#999" class="fa fa-wrench fa-lg function"
+                                                aria-hidden="true"></i>
+                                        </a>
+                                        <a href="/adminuser/delete" data-id="{{this._id}}" class="delete-btn">
+                                            <i style="color:#999" class="fa fa-trash fa-lg function"
+                                                aria-hidden="true"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                                 {{/each}}
                             </tbody>
@@ -51,13 +65,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add user</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="modal-form" action="/adminuser/create" method="POST">
+                    <form class="modal-form form-create" action="/adminuser/create" method="POST">
                         <div class="form-group">
                             <input name="email" type="email" class="form-control" id="exampleInputPassword"
                                 placeholder="Email">
@@ -66,16 +80,49 @@
                             <input name="password" type="password" class="form-control" id="exampleInputPassword"
                                 placeholder="Password">
                         </div>
-                        <select name="role" multiple class="form-control" id="exampleFormControlSelect2">
-                            <option Selected>User</option>
-                            <option>Admin</option>
+                        <select name="role" multiple class="form-control" id="select1">
+                            <option Selected value="user">User</option>
+                            <option value="admin">Admin</option>
                         </select>
                         <button type="submit" class="btn btn-primary mt-2">Submit</button>
 
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary buttonnn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="" data-dismiss="modal" style="text-decoration: none; color: #000">
+                        X
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="/adminuser/update" method="POST" class="update-form">
+                        <label style="display: none" for="" class="getId"></label>
+                        <div class="form-group">
+                            <input value="" name="email" type="email" class="form-control" id="exampleInputPassword1"
+                                placeholder="Email" disabled>
+                        </div>
+                        <select name="level" class="form-control" id="select2">
+                            <option class="update-option1" value='0'>User</option>
+                            <option class="update-option2" value='1'>Admin</option>
+                        </select>
+                        <button name="editUser" type="submit" class="btn btn-primary mt-2">Submit</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,5 +148,3 @@
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
-
-<script src="js/admin/user.js"></script>

@@ -1,8 +1,9 @@
 const Product = require('../models/ProductModel')
+const Cart = require('../models/CartModel.js')
 const { multipleMongooseToObject } = require('../../util/mongoose.js')
 
 
-class HomesController {
+class CartController {
     async index(req, res, next) {
         const product = await Product.find({ categoryName: "Mon an noi bat" })
 
@@ -15,4 +16,4 @@ class HomesController {
 
 }
 
-module.exports = new HomesController();
+module.exports = new CartController();

@@ -9,17 +9,15 @@ class LoginController {
         if (req.session.loggedIn == true) {
             res.redirect('/')
         } else {
-            res.render('login', {layout: 'main.hbs'})
+            res.render('login', { layout: 'main.hbs' })
         }
 
     }
 
     async login(req, res, next) {
         const user = await User.findOne({ email: req.body.email })
-        console.log(req.body.password)
-        console.log(user.password)
         try {
-            if (!user || req.body.password == user.password) {
+            if (!user || req.body.password == user.password && user.level == 0) {
                 req.session.loggedIn = true
                 req.session.userId = user.id
                 res.redirect("/")
@@ -27,8 +25,6 @@ class LoginController {
         } catch (err) {
             res.render("login", { msg: 'Username or password is not correct!' })
         }
-
-
     }
 }
 

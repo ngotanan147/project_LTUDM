@@ -10,45 +10,54 @@
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-                <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-primary"
-                    style="width: 100%;">Add item</button>
+                <!-- <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-primary" style="width: 100%;">Add item</button> -->
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Image</th>
-                                    <th>Price</th>
-                                    <th>Description</th>
-                                    <th>Category ID</th>
-                                    <th>Category name</th>
-                                    <th>Function</th>
+                                    <th>STT</th>
+                                    <th>Cart ID</th>
+                                    <th>User ID</th>
+                                    <th>User name</th>
+                                    <th>Product name</th>
+                                    <th>Product ID</th>
+                                    <th>Product image</th>
+                                    <th>Product price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>function</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{#each product}}
                                 <tr>
                                     <td>
-                                        {{this._id}}
+                                        a
                                     </td>
                                     <td>
-                                        {{this.name}}
-                                    </td>
-                                    <td class="text-center"><img style="width: 75px; height: 75px" src="img/{{this.image}}"
-                                            alt=""></td>
-                                    <td>
-                                        {{this.price}}
+                                        b
                                     </td>
                                     <td>
-                                        {{this.description}}
+                                        c
                                     </td>
                                     <td>
-                                        {{this.categoryId}}
+                                        d
                                     </td>
                                     <td>
-                                        {{this.categoryName}}
+                                        e
+                                    </td>
+                                    <td>
+                                        f
+                                    </td>
+                                    <td class="text-center"><img style="width: 75px; height: 75px" src="" alt=""></td>
+                                    <td>
+                                        a
+                                    </td>
+                                    <td>
+                                        c
+                                    </td>
+                                    <td>
+                                        df
                                     </td>
                                     <td class="d-flex justify-content-around">
                                         <a href="">
@@ -62,7 +71,7 @@
                                         </a>
                                     </td>
                                 </tr>
-                                {{/each}}
+
                             </tbody>
                         </table>
                     </div>
@@ -71,6 +80,7 @@
 
         </div>
         <!-- /.container-fluid -->
+
     </div>
     <!-- End of Main Content -->
 
@@ -80,38 +90,30 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add product</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add user</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="" method="POST">
                         <div class="form-group">
                             <input name="name" type="text" class="form-control" id="exampleInputEmail"
                                 placeholder="Name">
                         </div>
                         <div class="form-group">
-                            <input name="image" type="file" class="form-control" id="exampleInputPassword"
-                                placeholder="Image">
+                            <input name="email" type="email" class="form-control" id="exampleInputPassword"
+                                placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input name="price" type="text" class="form-control" id="exampleInputPassword"
-                                placeholder="Price">
+                            <input name="password" type="password" class="form-control" id="exampleInputPassword"
+                                placeholder="Password">
                         </div>
-                        <div class="form-group">
-                            <input name="description" type="text" class="form-control" id="exampleInputPassword"
-                                placeholder="Description">
-                        </div>
-                        <div class="form-group">
-                            <input name="category_id" type="text" class="form-control" id="exampleInputPassword"
-                                placeholder="Category ID">
-                        </div>
-                        <div class="form-group">
-                            <input name="category_name" type="text" class="form-control" id="exampleInputPassword"
-                                placeholder="Category name">
-                        </div>
-                        <button name="addProduct" type="submit" class="btn btn-primary mt-2">Submit</button>
+                        <select name="role" multiple class="form-control" id="exampleFormControlSelect2">
+                            <option Selected>User</option>
+                            <option>Admin</option>
+                        </select>
+                        <button name="addUser" type="submit" class="btn btn-primary mt-2">Submit</button>
 
                     </form>
                 </div>
@@ -121,4 +123,16 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Ngô Tấn An - UIT</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
 </div>

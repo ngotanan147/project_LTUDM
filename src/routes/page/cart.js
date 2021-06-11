@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const homeController = require("../../app/controllers/HomeController")
+const cartController = require("../../app/controllers/CartController")
 
 router.get('/', homeController.index)
 router.get('/:slug', homeController.notFound)

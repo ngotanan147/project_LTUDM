@@ -2,7 +2,7 @@
 class AdminLogoutController {
     index(req, res, next) {
         req.session.adminLoggedIn = false
-        res.redirect('/admin')
+        res.redirect('/adminlogin')
     }
 }
 
