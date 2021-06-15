@@ -1,0 +1,121 @@
+.cartt {
+    width: 100%;
+    padding-top: 30px;
+    background-image: url(/img/background2.png);
+    background-repeat: repeat;
+}
+
+.cart .trangchu {
+    color: #333;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.cart .giohang {
+    color: #ef7147;
+}
+
+.cart .trangchu:hover {
+    color: #ef7147;
+}
+
+.cart .title {
+    padding: 0px 30px 0px 0px;
+    position: relative;
+    font-family: "UTMBryantLGBold", sans-serif;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.cart .title h2 {
+    font-size: 26px;
+}
+
+.table {
+    background-color: #fff;
+    border: 1px solid #ececec;
+    border-spacing: 1px;
+    border-radius: 5px;
+}
+
+.content .congtru button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.content .congtru span {
+    padding: 5px;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+/* .tieptucmuahang{
+    padding-top: 5px;
+} */
+
+.tongtienthanhtoan {
+    background-color: #fff;
+    border: 1px solid #ececec;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.tongtienthanhtoan div {
+    padding: 5px 0px;
+}
+
+.tongtienthanhtoan .tongtien {
+    color: #ef7147;
+}
+
+.tienhanhthanhtoan button {
+    border: 1px solid #ef7147;
+    color: #fff;
+    background-color: #ef7147;
+    padding: 10px 49px;
+    outline: none;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.tienhanhthanhtoan button:hover {
+    color: #ef7147;
+    background-color: #fff;
+}
+
+#deleteButton {
+    background: none;
+    border: none;
+}
+
+#deleteButton:active {
+    background-color: #ececec;
+}
+
+.tieptucmuahang a {
+    text-decoration: none;
+    color: #000;
+    outline: none;
+    padding: 8px 20px;
+    border: 1px solid #ececec;
+    background-color: #fff;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.tieptucmuahang a:hover {
+    border: 1px solid #ef7147;
+    color: #ef7147;
+    text-decoration: none;
+}
+
+.hide {
+    display: none;
+}

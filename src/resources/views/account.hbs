@@ -1,0 +1,129 @@
+<div class="Content_Detail">
+    <div class="chitiet" style="color:#000!important;">
+        <h3>Hóa đơn của bạn</h3>
+
+    </div>
+    <div id="Detail_Product_All">
+        <div class="row" >
+            <div class="col-12 col-lg-9 col-md-12 col-sm-12 products" id="bill">
+                <div class="row">
+                    <div class="my_account col-sm-12 col-lg-12 col-md-12">
+                        <div class="dashboard">
+                            <div class="recent_orders">
+                                <div class="tab_all">
+                                    <table class="table table-bordered table-hover text-center" style="font-size: 16px">
+                                        <thead class="">
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>ID</th>
+                                                <th>Thời gian</th>
+                                                <th>Tổng tiền</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tdody_content">
+                                            {{!-- render --}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-content col-xs-12 col-sm-12 col-lg-3 col-md-12 col-12">
+                <div class="aside_vanchuyen mb-4">
+                    <div class="aside_content">
+                        <div class="vanchuyen">
+                            <div class="icon text-center">
+                                <h5 style="padding-left: 5px;">Tài khoản của tôi</h5>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-12 col-md-12 mb-lg-0">
+                                    <div class="testimonial-card">
+                                        <div class="card-up info-color"></div>
+                                        <div class="avatar mx-auto white mt-2 text-center">
+                                            <img src="img/{{avatar}}" class="ChangeAvatar rounded-circle"
+                                                data-toggle="modal" data-target="#exampleModalCenter">
+                                        </div>
+                                        <div class="pt-2 pb-2">
+                                            <h4 class="text-center">
+
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form_signup">
+                                <p>
+                                    <i class="fa fa-envelope font_some"></i>
+                                    <span>Email: {{email}}
+
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chi tiết hóa đơn modal -->
+<div class="modal fade modal1" id="exampleModalCenter1" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="width: auto">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Chi tiết hóa đơn</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="cthd_modal">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Avatar Modal -->
+<div class="modal fade modal2" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header p-2 pl-3">
+                <h5 class="modal-title" id="exampleModalLongTitle">Thay ảnh đại diện</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 mb-lg-0">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="testimonial-card">
+                                <div class="card-up info-color"></div>
+                                <div class="avatar mx-auto white mt-2 text-center">
+
+                                    <img src="" class="rounded-circle" style="width: 200px">
+
+                                    <img src="" class="rounded-circle" style="width: 200px">
+
+                                </div>
+                                <div class="pt-2 pb-2 text-center">
+                                    <input type="file" name="image">
+                                </div>
+                                <div class="pt-2 text-center thaydoianh">
+                                    <input name="changeAvatar" type="submit" value="Xác nhận">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

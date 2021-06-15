@@ -1,0 +1,285 @@
+.Content_Detail {
+    background-image: url(img_doan/bg_all.png);
+    background-repeat: repeat;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.Detail_Product_All {
+    margin-top: 0px;
+    margin: 0% 10%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.chitiet {
+    font-size: 13px;
+    color: #ef7147;
+    margin-left: 10%;
+}
+
+.chitiet a {
+    color: #000;
+    text-decoration: none;
+}
+
+.chitiet a:hover {
+    color: #ef7147 !important;
+}
+
+.chitiet2:hover {
+    color: #ef7147 !important;
+    text-decoration: none;
+}
+
+.aside_vanchuyen {
+    padding: 15px 10px 10px 20px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.tab_all {
+    width: 100%;
+    background-color: #fff;
+}
+
+.table_cart {
+    width: 100%;
+    font-size: 13px;
+    line-height: 37px;
+    color: #252525;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.thead_default tr th {
+    padding: 5px;
+    font-size: 14px;
+    color: #ef7147;
+    background-color: #eceeef;
+    text-align: center;
+    font-weight: bold;
+}
+
+.thead_default tr {
+    color: #333333;
+    text-align: center;
+    border: #ebebeb thin solid;
+    line-height: 1.5;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ebebeb;
+}
+
+.thead_default {
+    width: 100%;
+    color: #333333;
+    text-align: center;
+    line-height: 1.5;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ebebeb;
+    min-width: 60px;
+}
+
+.thaydoianh input {
+    background-color: #ef7147;
+    color: #fff;
+    border: 1px solid #ef7147;
+    border-radius: 5px;
+    transition: 0.2s;
+    padding: 5px 10px;
+}
+
+.thaydoianh input:hover {
+    background-color: #fff;
+    color: #ef7147;
+}
+
+.thaydoianh a:hover {
+    text-decoration: none;
+    color: #ef7147;
+}
+
+.ChangeAvatar {
+    width: 100px;
+}
+
+.ChangeAvatar:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 760px) {
+    .tdody_content {}
+    .tdody_content td td {
+        color: #fff;
+    }
+}
+
+.tdody_content tr {
+    text-align: center;
+}
+
+.font_some {
+    width: 20px;
+    text-align: center;
+    color: #ef7147;
+    float: left;
+    line-height: 24px;
+    margin-right: 10px;
+}
+
+.form_signup p span {
+    font-size: 14px;
+}
+
+.tdody_content tr td {
+    padding: 5px;
+}
+
+/*  */
+
+.Content_Detail {
+    background-image: url(img_doan/bg_all.png);
+    background-repeat: repeat;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.Detail_Product_All {
+    margin-top: 0px;
+    margin: 0% 10%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.chitiet {
+    font-size: 13px;
+    color: #ef7147;
+    margin-left: 10%;
+}
+
+.chitiet a {
+    color: #000;
+    text-decoration: none;
+}
+
+.chitiet a:hover {
+    color: #ef7147 !important;
+}
+
+.chitiet2:hover {
+    color: #ef7147 !important;
+    text-decoration: none;
+}
+
+.aside_vanchuyen {
+    padding: 15px 10px 10px 20px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.tab_all {
+    width: 100%;
+    background-color: #fff;
+}
+
+.table_cart {
+    width: 100%;
+    font-size: 13px;
+    line-height: 37px;
+    color: #252525;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.thead_default tr th {
+    padding: 5px;
+    font-size: 14px;
+    color: #ef7147;
+    background-color: #eceeef;
+    text-align: center;
+    font-weight: bold;
+}
+
+.thead_default tr {
+    color: #333333;
+    text-align: center;
+    border: #ebebeb thin solid;
+    line-height: 1.5;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ebebeb;
+}
+
+.thead_default {
+    width: 100%;
+    color: #333333;
+    text-align: center;
+    line-height: 1.5;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ebebeb;
+    min-width: 60px;
+}
+
+.thaydoianh input {
+    background-color: #ef7147;
+    color: #fff;
+    border: 1px solid #ef7147;
+    border-radius: 5px;
+    transition: 0.2s;
+    padding: 5px 10px;
+}
+
+.thaydoianh input:hover {
+    background-color: #fff;
+    color: #ef7147;
+}
+
+.thaydoianh a:hover {
+    text-decoration: none;
+    color: #ef7147;
+}
+
+.ChangeAvatar {
+    width: 100px;
+}
+
+.ChangeAvatar:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 760px) {
+    .tdody_content {}
+    .tdody_content td td {
+        color: #fff;
+    }
+}
+
+.tdody_content tr {
+    text-align: center;
+}
+
+.font_some {
+    width: 20px;
+    text-align: center;
+    color: #ef7147;
+    float: left;
+    line-height: 24px;
+    margin-right: 10px;
+}
+
+.form_signup p span {
+    font-size: 14px;
+}
+
+.tdody_content tr td {
+    padding: 5px;
+}

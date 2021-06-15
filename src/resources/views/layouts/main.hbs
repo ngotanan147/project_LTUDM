@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="/fontawesome/css/all.css" />
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/trangchu.css">
+    <link rel="stylesheet" href="/filepond/filepond.css" />
+    {{!-- css --}}
+    <link rel="stylesheet" href="/css/{{css}}">
     <link rel="stylesheet" href="/css/header_footer.css">
+    {{!-- --}}
     <title>Delicious</title>
 </head>
 
@@ -20,19 +22,31 @@
     {{> header}}
 
     {{{body}}}
-    {{!-- {{!< LAYOUT}} --}} {{> footer}}
+
+    {{> footer}}
 
 </body>
 
 </html>
-<!-- jQuery library -->
-<script src="/jquery/jquery-3.6.0.min.js"></script>
 <!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script defer src="bootstrap/assets/js/vendor/jquery-slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script defer src="bootstrap/assets/js/vendor/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script defer src="bootstrap/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 <!-- Latest compiled JavaScript -->
+<script defer src="jquery/jquery-3.6.0.min.js"></script>
+<script defer src="sweetalert/sweetalert.min.js"></script>
 {{!-- Home script --}}
-<script src="swiper/swiper-bundle.js"></script>
-<script src="swiper/swiper-bundle.min.js"></script>
-<script src="swiper/swiper_init.js"></script>
-<script src="js/page/home.js"></script>
+<script defer src="swiper/swiper-bundle.js"></script>
+<script defer src="swiper/swiper-bundle.min.js"></script>
+<script defer src="swiper/swiper_init.js"></script>
+<script defer src="filepond/filepond.js"></script>
+{{!-- JS --}}
+<script defer src="js/page/{{js}}"></script>
+<script defer src="js/page/payment.js"></script>
 {{!-- --}}

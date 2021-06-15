@@ -1,11 +1,15 @@
 const bodyParser = require('body-parser')
-const flash = require('express-flash')
 const session = require('express-session')
+const cookieParser = require('cookie-parser')
 
 const registerRouter = require('./page/register')
 const loginRouter = require('./page/login')
 const logoutRouter = require('./page/logout')
-const homeRouter = require('./page/logout')
+const homeRouter = require('./page/home')
+const cartRouter = require('./page/cart')
+const accountRouter = require('./page/account')
+const productRouter = require('./page/product')
+const searchRouter = require('./page/search')
 //Admin
 const adminUserRouter = require('./admin/user')
 const adminRegisterRouter = require('./admin/register')
@@ -21,6 +25,7 @@ function route(app) {
         extended: true
     }));
     app.use(bodyParser.json());
+    app.use(cookieParser())
 
     app.use(session({
         secret: "mysecret",
@@ -30,14 +35,19 @@ function route(app) {
         cookie: { maxAge: 60 * 60 * 24 * 30 }
     }))
 
-
-    app.use('/login', checkNotLoggedIn, loginRouter)
-    app.use('/logout', logoutRouter)
-    app.use('/register', checkNotLoggedIn, registerRouter)
-    app.get('/', checkLoggedIn, (req, res) => {
+    //page
+    app.get('/', (req, res) => {
         res.redirect('/home')
     })
-    app.use('/home', checkLoggedIn, homeRouter)
+    app.use('/login', checkNotLoggedIn, loginRouter)
+    app.use('/logout', checkLoggedIn, logoutRouter)
+    app.use('/register', checkNotLoggedIn, registerRouter)
+    app.use('/home', homeRouter)
+    app.use('/cart', cartRouter)
+    app.use('/account', checkLoggedIn, accountRouter)
+    app.use('/product', productRouter)
+    app.use('/search', searchRouter)
+
     //admin
     app.use('/adminregister', checkNotLoggedInAdmin, adminRegisterRouter);
     app.use('/adminlogin', checkNotLoggedInAdmin, adminLoginRouter);
@@ -89,6 +99,5 @@ const checkNotLoggedInAdmin = (req, res, next) => {
         res.render("admin/user", { layout: 'admin.hbs' });
     }
 }
-
 
 module.exports = route;

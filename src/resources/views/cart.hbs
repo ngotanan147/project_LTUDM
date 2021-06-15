@@ -1,75 +1,79 @@
-<form method="POST" action="">
-    <div class="cartt">
-        <div class="container">
-            <div class="header">
-                <span>
-                    <a class="trangchu" href="">Trang chủ</a>
-                    <span>/</span>
-                    <span class="giohang">Giỏ hàng</span>
-                </span>
-            </div>
-            <div class="title pt-3 pb-4">
-                <h2>Giỏ hàng của tôi</h2>
-            </div>
-            <div class="text-center giohangtrong hide pt-5 pb-4">
-                <h2>Giỏ hàng trống!</h2>
-            </div>
-            <div class="form">
-                <div class="content">
-                    <table class="table text-center d-none d-md-table d-lg-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Ảnh sản phẩm</th>
-                                <th scope="col">Tên sản phẩm</th>
-                                <th scope="col">Đơn giá</th>
-                                <th scope="col">Số lượng</th>
-                                <th scope="col">Thành tiền</th>
-                                <th scope="col">Xóa</th>
-                            </tr>
-                        </thead>
-                        <tbody id="order_items">
-                            <!-- JS render -->
-                        </tbody>
-                    </table>
-                    <div id="order_items_mobile" class="mobile_table d-lg-none d-md-none mb-3 bg-white p-3 pt-4">
+<div class="cartt">
+    <div class="container">
+        <div class="title pb-5">
+            <h2>Giỏ hàng</h2>
+        </div>
+        <div class="text-center giohangtrong hide pt-5 pb-5">
+            <h2>Giỏ hàng trống!</h2>
+        </div>
+        <div class="form">
+            <div class="content">
+                <table class="table text-center d-none d-md-table d-lg-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Ảnh sản phẩm</th>
+                            <th scope="col">Tên sản phẩm</th>
+                            <th scope="col">Đơn giá</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Thành tiền</th>
+                            <th scope="col">Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order_items">
                         <!-- JS render -->
-                    </div>
+                    </tbody>
+                </table>
+                <div id="order_items_mobile" class="mobile_table d-lg-none d-md-none mb-3 bg-white p-3 pt-4">
+                    <!-- JS render -->
                 </div>
-                <div class="container p-0">
-                    <div class="thanhtoan">
-                        <div class="d-flex justify-content-between">
-                            <div class="tieptucmuahang pt-1">
-                                <a href="">
-                                    Tiếp tục mua hàng
-                                </a>
+            </div>
+            <div class="container p-0">
+                <div class="thanhtoan">
+                    <div class="d-flex justify-content-between">
+                        <div class="tieptucmuahang pt-1">
+                            <a href="">
+                                Tiếp tục mua hàng
+                            </a>
+                        </div>
+                        <div class="tongtienthanhtoan p-2 d-flex">
+                            <div class="">
+                                <span>Tổng tiền thanh toán:</span>
                             </div>
-                            <div class="tongtienthanhtoan p-2 d-flex">
-                                <div class="">
-                                    <span>Tổng tiền thanh toán:</span>
-                                </div>
-                                <div class="text-center">
-                                    <span style="color: #ef7147" class="total pl-3">0₫</span>
-                                </div>
+                            <div class="text-center">
+                                <span style="color: #ef7147" class="total pl-3">0₫</span>
                             </div>
                         </div>
                     </div>
-                    <div class="text-right pt-3 pb-3 tienhanhthanhtoan">
-                        <a href="">
-                            <button type="button" id="btn_thanhtoan">Tiến hành thanh toán</button>
-                        </a>
-                    </div>
+                </div>
+                <div class="text-right pt-3 pb-3 tienhanhthanhtoan">
+                    <button type="button" id="btn_pay">Tiến
+                        hành thanh toán</button>
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
-</form>
+</div>
 
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
 
-
-<script>
- 
-</script>
+                <form action="/adminuser/update" method="POST" class="update-form">
+                    <h4>Nhập email để nhận hóa đơn!</h4>
+                    <label style="display: none" for="" class="getId"></label>
+                    <div class="form-group pt-2">
+                        <input value="" name="email" type="email" class="form-control" id="exampleInputPassword1"
+                            placeholder="Email">
+                    </div>
+                    <button name="editUser" type="submit" class="btn btn-primary mt-2">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

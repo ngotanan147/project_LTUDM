@@ -1,10 +1,18 @@
 const User = require('../models/UserModel');
 const bcrypt = require('bcrypt')
-const { multipleMongooseToObject } = require('../../util/mongoose.js')
+const { multipleMongooseToObject, getQuantity, checkLoginForOption } = require('../../util/mongoose.js')
 
 class RegisterController {
     index(req, res, next) {
-        res.render("register")
+        var quantity = getQuantity(req.cookies.cart)
+        var lst = checkLoginForOption(req.session)
+
+        res.render("register", {
+            layout: "main.hbs",
+            quantity: quantity,
+            loginAccount: lst[0],
+            registerLogout: lst[1]
+        })
     }
 
     //[POST]
@@ -13,13 +21,12 @@ class RegisterController {
             const formData = req.body
             formData.avatar = "default.jpg"
             formData.level = 0
-            console.log(formData)
 
             const user = new User(formData)
             user.save()
 
             res.redirect('/login')
-        } catch(e) {
+        } catch (e) {
             res.redirect('/register')
         }
     }

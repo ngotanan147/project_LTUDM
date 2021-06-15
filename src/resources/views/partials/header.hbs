@@ -11,9 +11,9 @@
             </div>
             <div class="hidden-xs hidden-sm col-md-3 col-lg-3">
                 <div class="header_search">
-                    <form action="">
-                        <input type="text" placeholder="Tìm sản phẩm">
-                        <button class="_btn" type="button">
+                    <form id="search-form" action="/search">
+                        <input type="text" name="query" placeholder="Tìm sản phẩm">
+                        <button class="_btn" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
                     </form>
@@ -22,13 +22,15 @@
             <div class="hidden-xs col-sm-6 col-md-2 col-lg-2">
                 <ul class="top_right">
                     <li>
-                        <a href="">Đăng nhập</a>
+                        {{{loginAccount}}}
+                        {{!-- <a href="/login">Đăng nhập</a> --}}
                     </li>
                     <li>
                         <a href="">&</a>
                     </li>
                     <li>
-                        <a href="">Đăng ký</a>
+                        {{{registerLogout}}}
+                        {{!-- <a href="/register">Đăng ký</a> --}}
                     </li>
                 </ul>
             </div>
@@ -57,7 +59,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/product" class="nav-link">
                             <i class="fa fa-birthday-cake"></i>
                             Sản phẩm
                         </a>
@@ -68,12 +70,12 @@
                             Giới thiệu
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{!-- <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="fa fa-pencil-alt"></i>
                             Blog
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="fa fa-phone"></i>
@@ -81,10 +83,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="/cart" class="nav-link">
                             <div class="cart">
                                 <i class="fa fa-shopping-cart" style="font-size: 22px; color: #ef7147;"></i>
-                                <span style="color:#333">(0)</span>
+                                <span style="color:#333">
+                                    <span>(</span>
+                                    <span id="cart-quantity">{{quantity}}</span>
+                                    <span>)</span>
+                                </span>
                             </div>
                         </a>
                     </li>

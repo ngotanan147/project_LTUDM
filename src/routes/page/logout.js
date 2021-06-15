@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
-const homeController = require("../../app/controllers/HomeController")
+const logoutController = require("../../app/controllers/LogoutController")
 
-router.get("/", homeController.index)
-router.get("/:slug", homeController.notFound)
+router.get("/", logoutController.index)
+router.get("/:slug", logoutController.notFound)
 
 
 module.exports = router

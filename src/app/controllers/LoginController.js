@@ -1,15 +1,22 @@
 const User = require('../models/UserModel')
-const { mongooseToObject } = require('../../util/mongoose.js')
+const { mongooseToObject, getQuantity, checkLoginForOption } = require('../../util/mongoose.js')
 const bcrypt = require('bcrypt')
 
 
 class LoginController {
 
     index(req, res, next) {
+        var quantity = getQuantity(req.cookies.cart)
+        var lst = checkLoginForOption(req.session)
         if (req.session.loggedIn == true) {
             res.redirect('/')
         } else {
-            res.render('login', { layout: 'main.hbs' })
+            res.render('login', {
+                layout: 'main.hbs',
+                quantity: quantity,
+                loginAccount: lst[0],
+                registerLogout: lst[1]
+            })
         }
 
     }
