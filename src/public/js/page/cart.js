@@ -71,6 +71,13 @@ function sumQuantity(arr) {
     }
     return sum
 }
+function sumPrice(arr) {
+    var sum = 0
+    for (let index = 0; index < arr.length; index++) {
+        sum += arr[index].quantity * arr[index].price
+    }
+    return sum
+}
 
 function render() {
     if (items.length == 0) {
@@ -144,6 +151,8 @@ function render() {
 
     $("#order_items_mobile").html(htmlMoble)
     $("#order_items").html(html)
+
+    $(".total-price").html(format(sumPrice(items)))
 
     $(".inc").click(function () {
         var id = $(this).attr("data-id")
