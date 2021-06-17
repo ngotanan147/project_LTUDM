@@ -28,28 +28,42 @@ function render(arr) {
             <div class="col-sm-12 col-md-12 col-lg-4 product-col mb-5">
                 <div class="items">
                     <div class="picture">
-                        <a href="">
+                        <a href="/productdetail/${item._id}">
                             <img src="img/${item.image}" alt="" style="max-width: 100%; height: 273px">
                         </a>
                     </div>
                     <div class="info">
-                        <h3 class="title" style="margin-top:10px;">
-                            ${item.name}
-                        </h3>
-                        <div class="price">
-                            <p class="price${item.product_id}">${format(item.price)}</p>
+                        <div class="infoLeft">
+                            <h3 class="title" style="margin-top:10px;">
+                                ${item.name}
+                            </h3>
+                            <div class="price mt-2">
+                                <p class="price${item.product_id}">${format(item.price)}</p>
+                            </div>
                         </div>
-                        <div class="btn2">
-                            <a class="addtocart">
-                                <button>Thêm vào giỏ</button>
-                            </a>
+                        <div class="infoRight text-right mt-4">
+                            <button class="addtocart" data-id="${item._id}">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
             </div>
         `)
     })
+    $(".addtocart").click(function () {
+        const productId = $(this).attr("data-id");
+        $.ajax({
+            type: "POST",
+            url: `http://localhost:3000/cart/${productId}`,
+            contentType: 'application/json',
+            encode: true,
+        }).done(function (res) {
+            $("#cart-quantity").html(res.quantity)
+            swal("Đã thêm vào giỏ hàng!", "", "success");
+
+        })
+    })
 }
+
 
 function ajaxForSelect(value) {
     return (
@@ -59,6 +73,7 @@ function ajaxForSelect(value) {
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
+            console.log('render')
             render(res.product)
         })
     )
@@ -70,4 +85,5 @@ $('#selector').change(function () {
     } else {
         ajaxForSelect($(this).val())
     }
-});
+})
+

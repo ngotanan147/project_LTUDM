@@ -13,6 +13,8 @@ class LoginController {
         } else {
             res.render('login', {
                 layout: 'main.hbs',
+                // css: "trangchu.css",
+                js: "login.js",
                 quantity: quantity,
                 loginAccount: lst[0],
                 registerLogout: lst[1]
@@ -22,15 +24,18 @@ class LoginController {
     }
 
     async login(req, res, next) {
-        const user = await User.findOne({ email: req.body.email })
         try {
+            const user = await User.findOne({ email: req.body.email })
             if (!user || req.body.password == user.password && user.level == 0) {
                 req.session.loggedIn = true
                 req.session.userId = user.id
-                res.redirect("/")
+                res.send({ status: true })
+            } else {
+                res.send({ status: false, msg: 'Login failed :(' })
             }
         } catch (err) {
-            res.render("login", { msg: 'Username or password is not correct!' })
+            console.log(err)
+            next()
         }
     }
 }

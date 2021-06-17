@@ -99,9 +99,53 @@ $.ajax({
         })
     })
 })
+// function submitAvatar(value) {
+//     return (
+//         $('#changeAvatar').submit(function () {
+//             const formData = {
+//                 avatar: $('#changeAvatar input[name=avatar]')
+//             }
+//             $.ajax({
+//                 type: "POST",
+//                 url: 'http://localhost:3000/account/changeAvatar',
+//                 data: JSON.stringify(avatar),
+//                 contentType: 'application/json',
+//                 encode: true,
+//             }).done(function (res) {
+//                 render(res.product)
+//             })
+//         })
+//     )
+// }
 
-$(".avatar").click(function (event) {
-    $(".modal2").modal('show');
-});
+// $('#changeAvatarr').click(function (e) {
+//     const formData = {
+//         avatar: $('#changeAvatar input[name=avatar]')
+//     }
+//     $.ajax({
+//         type: "POST",
+//         url: 'http://localhost:3000/account/changeAvatar',
+//         data: JSON.stringify(formData),
+//         contentType: 'application/json',
+//         encode: true,
+//     }).done(function (res) {
+//         render(res.product)
+//     })
+// })
+
+$('#deleteAvatar').click(function (e) {
+    $.ajax({
+        type: "DELETE",
+        url: 'http://localhost:3000/account',
+        contentType: 'application/json',
+        encode: true,
+    }).done(function (res) {
+        console.log(res.image)
+        $('#avatar-image').attr('src', 'img/users/' + res.image)
+    })
+
+    $('.close-modal').click()
+})
+
 
 $(".createdAt").html($(".createdAt").html().replace(" GMT+0700 (Indochina Time)", ""))

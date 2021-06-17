@@ -96,7 +96,11 @@ h2.title_sidebar:before {
   float: left;
   position: relative; }
 
-h3.title {
+.info {
+  display: flex;
+  width: 100%; }
+
+.title {
   margin: 0px;
   padding: 0px;
   font-size: 17px;
@@ -110,7 +114,7 @@ h3.title {
   color: #ef7147;
   font-size: 17px; }
 
-.btn2 button {
+.addtocart {
   outline: none;
   border: none;
   border-radius: 6px;
@@ -118,11 +122,19 @@ h3.title {
   color: #fff;
   background: #ef7147; }
 
-.btn2 button:hover {
+.infoLeft {
+  width: 50%; }
+
+.infoRight {
+  text-align: right;
+  width: 50%; }
+
+.infoRight button:hover {
   color: #ef7147;
   background: #fff;
   outline: none;
   transition: 0.2s;
+  cursor: pointer;
   border: solid 1px #ef7147; }
 
 @media only screen and (max-width: 1024px) {
@@ -165,7 +177,7 @@ h3.title {
   transition: 0.2s; }
 
 h2.title_sidebar:before {
-  background-image: url("<?php echo URL ?>mvc/public/img_doan/banhnho.png"); }
+  background-image: url("img/banhnho.png")}
 
 @media only screen and (max-width: 991px) {
   .picture img {
@@ -173,3 +185,8 @@ h2.title_sidebar:before {
 
 .picture:hover {
   cursor: pointer; }
+
+.btn-same:hover{
+  background: #fff !important;
+  color: #ef7147;
+}

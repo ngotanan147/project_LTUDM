@@ -18,35 +18,36 @@
 </head>
 
 <body>
-
     {{> header}}
 
-    {{{body}}}
-
+    {{!-- <div class="main-content"> --}}
+        {{{body}}}
+        {{!-- </div> --}}
     {{> footer}}
 
 </body>
 
 </html>
 <!-- Popper JS -->
-<script defer src="bootstrap/assets/js/vendor/jquery-slim.min.js"
+<script defer src="/bootstrap/assets/js/vendor/jquery-slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
-<script defer src="bootstrap/assets/js/vendor/popper.min.js"
+<script defer src="/bootstrap/assets/js/vendor/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
-<script defer src="bootstrap/dist/js/bootstrap.min.js"
+<script defer src="/bootstrap/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 <!-- Latest compiled JavaScript -->
-<script defer src="jquery/jquery-3.6.0.min.js"></script>
-<script defer src="sweetalert/sweetalert.min.js"></script>
+<script defer src="/jquery/jquery-3.6.0.min.js"></script>
+<script defer src="/sweetalert/sweetalert.min.js"></script>
 {{!-- Home script --}}
-<script defer src="swiper/swiper-bundle.js"></script>
-<script defer src="swiper/swiper-bundle.min.js"></script>
-<script defer src="swiper/swiper_init.js"></script>
-<script defer src="filepond/filepond.js"></script>
+<script defer src="/swiper/swiper-bundle.js"></script>
+<script defer src="/swiper/swiper-bundle.min.js"></script>
+<script defer src="/swiper/swiper_init.js"></script>
+<script defer src="/filepond/filepond.js"></script>
 {{!-- JS --}}
-<script defer src="js/page/{{js}}"></script>
-<script defer src="js/page/payment.js"></script>
+<script defer src="/js/page/{{js}}"></script>
+<script defer src="/js/page/payment.js"></script>
+{{!-- <script defer src="js/page/header.js"></script> --}}
 {{!-- --}}

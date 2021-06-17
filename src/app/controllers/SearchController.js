@@ -29,8 +29,18 @@ class SearchController {
         const { query } = req.params
         var product = await Product.find({ "name": { $regex: ".*" + query + ".*" } })
         product = multipleMongooseToObject(product)
-
-        res.send({ product: product })
+        if (product)
+            // console.log(product)
+            // res.render('search', {
+            //     layout: 'main.hbs',
+            //     quantity: quantity,
+            //     product: product,
+            //     css: "product.css",
+            //     js: "search.js",
+            //     loginAccount: lst[0],
+            //     registerLogout: lst[1]
+            // })
+            res.send({ product: product })
     }
 
 }

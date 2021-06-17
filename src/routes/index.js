@@ -10,6 +10,7 @@ const cartRouter = require('./page/cart')
 const accountRouter = require('./page/account')
 const productRouter = require('./page/product')
 const searchRouter = require('./page/search')
+const productdetailRouter = require('./page/productdetail')
 //Admin
 const adminUserRouter = require('./admin/user')
 const adminRegisterRouter = require('./admin/register')
@@ -47,6 +48,7 @@ function route(app) {
     app.use('/account', checkLoggedIn, accountRouter)
     app.use('/product', productRouter)
     app.use('/search', searchRouter)
+    app.use('/productdetail', productdetailRouter)
 
     //admin
     app.use('/adminregister', checkNotLoggedInAdmin, adminRegisterRouter);

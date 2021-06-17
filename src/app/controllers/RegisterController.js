@@ -1,6 +1,5 @@
 const User = require('../models/UserModel');
-const bcrypt = require('bcrypt')
-const { multipleMongooseToObject, getQuantity, checkLoginForOption } = require('../../util/mongoose.js')
+const { mongooseToObject, getQuantity, checkLoginForOption } = require('../../util/mongoose.js')
 
 class RegisterController {
     index(req, res, next) {
@@ -9,6 +8,7 @@ class RegisterController {
 
         res.render("register", {
             layout: "main.hbs",
+            js: "register.js",
             quantity: quantity,
             loginAccount: lst[0],
             registerLogout: lst[1]
@@ -19,15 +19,21 @@ class RegisterController {
     async register(req, res, next) {
         try {
             const formData = req.body
-            formData.avatar = "default.jpg"
-            formData.level = 0
+            var check = await User.find({ email: formData.email })
+            check = mongooseToObject(check)
+            if (check) {
+                formData.avatar = "default.jpg"
+                formData.level = 0
 
-            const user = new User(formData)
-            user.save()
+                const user = new User(formData)
+                user.save()
+                res.send({ status: true, msg: 'register successfully!' })
+            } else {
+                res.send({ status: false, msg: 'register fail :(' })
+            }
 
-            res.redirect('/login')
         } catch (e) {
-            res.redirect('/register')
+            console.log(e)
         }
     }
 }

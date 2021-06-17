@@ -6,6 +6,7 @@ function format(n) {
 }
 
 $('#search-form').submit(function (e) {
+    e.preventDefault()
     const query = $('#search-form input[name=query]').val()
     $.ajax({
         type: "GET",
@@ -13,7 +14,15 @@ $('#search-form').submit(function (e) {
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {
-        render(res.product)
+        if (Array.from(res.product).length != 0) {
+            $('.no-result').css('display', 'none')
+            console.log('true')
+            render(res.product)
+        } else {
+            console.log('false')
+            $('.search-result').html('')
+            $('.no-result').css('display', 'block')
+        }
     })
 })
 
@@ -44,8 +53,8 @@ function render(arr) {
                                 </div>
             
                                 <div class="text-right w-100">
-                                    <a class="addtocart" href="">
-                                        <button id="btn-same" type="submit" class=" btn-primary">
+                                    <a class="" href="">
+                                        <button style="background: #ef7147; border: 1px solid #ef7147" id="btn-same" type="submit" class="btn-same btn btn-primary">
                                             Thêm vào giỏ
                                         </button>
                                     </a>

@@ -111,7 +111,12 @@ h2.title_sidebar:before {
     position: relative;
 }
 
-h3.title {
+.info {
+    display: flex;
+    width: 100%;
+}
+
+.title {
     margin: 0px;
     padding: 0px;
     font-size: 17px;
@@ -127,7 +132,7 @@ h3.title {
     font-size: 17px;
 }
 
-.btn2 button {
+.addtocart {
     outline: none;
     border: none;
     border-radius: 6px;
@@ -136,11 +141,21 @@ h3.title {
     background: #ef7147;
 }
 
-.btn2 button:hover {
+.infoLeft {
+    width: 50%;
+}
+
+.infoRight {
+    text-align: right;
+    width: 50%;
+}
+
+.infoRight button:hover {
     color: #ef7147;
     background: #fff;
     outline: none;
     transition: 0.2s;
+    cursor: pointer;
     border: solid 1px #ef7147;
 }
 

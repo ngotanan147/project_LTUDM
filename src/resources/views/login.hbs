@@ -9,9 +9,11 @@
         <div class="row mt-3">
             <div class="col-xs-12 col-sm-12">
                 <div class="form">
-                    <form action="/login" method="post">
+                    <form action="/login" method="post" id="form-login">
+                        
                         <div class="form-group">
                             <label>Nếu bạn đã có tài khoản, đăng nhập ở đây</label><br>
+                            <label id="login-error" style="color: red"></label><br>
                             <label for="email">Email:</label>
                             <input type="email" class="form-control" id="email" placeholder="Username" name="email">
                         </div>

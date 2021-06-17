@@ -11,7 +11,7 @@ class ProductController {
             quantity: quantity,
             css: "product.css",
             js: "product.js",
-            loginProduct: lst[0],
+            loginAccount: lst[0],
             registerLogout: lst[1]
         })
     }

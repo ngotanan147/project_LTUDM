@@ -90,7 +90,8 @@
   color: #ef7147; }
 
 .ChangeAvatar {
-  width: 100px; }
+  width: 100px; 
+  height: 100px; }
 
 .ChangeAvatar:hover {
   cursor: pointer; }
@@ -208,11 +209,11 @@
   text-decoration: none;
   color: #ef7147; }
 
-.ChangeAvatar {
+/* .ChangeAvatar {
   width: 100px; }
 
 .ChangeAvatar:hover {
-  cursor: pointer; }
+  cursor: pointer; } */
 
 @media only screen and (max-width: 760px) {
   .tdody_content td td {

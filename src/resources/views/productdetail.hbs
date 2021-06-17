@@ -1,0 +1,256 @@
+<div class="Content_Detail">
+    <div class="Detail_Product_All">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12 products">
+                <div class="detail_product">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 details-product-image">
+                        <form action="">
+                            <div class="row">
+                                {{#each product}}
+                                <div class="product-detail-left product-images col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                                    <div class="row">
+                                        <div class="col_large_default large-image">
+                                            <a href="" class="large_image_url checkurl"
+                                                style="padding:10px; border: 1px solid #ddd">
+                                                <img style="max-width: 100%; max-height: 100%;"
+                                                    src="/img/{{this.image}}" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 details-pro mt-2">
+                                    <h3 class="title-product">{{this.name}}</h3>
+                                    <div class="tinhtrang pt-2">
+                                        <p>
+                                            <span style="font-size: 18px;">Giá: </span>
+                                            <span style="color: #ef7147; font-size: 18px;"
+                                                id="price">{{this.price}}</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="contact pt-3">
+                                        <a class="addtocart" href="">
+                                            <button style="background: #ef7147; border: 1px solid #ef7147" type="button"
+                                                class="btn-primary addtocart">Thêm vào giỏ</button>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="tab_width_full" style="padding-top: 50px;">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 tab_ord">
+                                <div class="product_tab">
+                                    <ul class="tabs_title pl-0">
+                                        <li class="tab_link">
+                                            <h3>
+                                                <span style="color:#ef7147; ">Mô tả sản phẩm</span>
+                                            </h3>
+                                        </li>
+                                    </ul>
+                                    <div class="tab_float">
+                                        <div class="tab_content">
+                                            <div class="rte">
+                                                <p>{{this.description}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                {{!--
+                <div class="related_module">
+                    <div class="row">
+                        <div class="icon_banh" style="text-align: center;margin-bottom: 10px; width: 100%;">
+                            <a href="" class="icon_banh_wrapper">
+                                <img src="/img/icon-banh.png" alt="" style="margin:auto; display: block;">
+                            </a>
+                        </div>
+                        <div class="title_module_main text-center mt-4">
+                            <h2><span class="foood_together" href="">Món ăn cùng loại</span></h2>
+                        </div>
+                        <div class="wrap_owl mt-4 mb-5">
+                            <div class="row">
+                                <div class="owl_item col-lg-6 col-md-6 col-xs-12">
+                                    <div class="item_product_main">
+                                        <div class="items">
+                                            <div class="image">
+                                                <a href="">
+                                                    <img src="" alt="" width="100%" height="250px">
+                                                </a>
+                                            </div>
+                                            <div class="infor mt-3" style="width: 100%">
+                                                <h3 class="title">
+                                                    <span>
+                                                        a
+                                                    </span>
+                                                </h3>
+                                                <div class="box_price d-flex">
+                                                    <div>
+                                                        <span class="special_price">
+                                                            <span id="" class="prices" style="color: #ef7147;font-size:
+                                                                20px;">100.000đ</span>
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="text-right w-100">
+                                                        <a class="addtocart" href="">
+                                                            <button id="btn-same" type="submit" class=" btn-primary">
+                                                                Thêm vào giỏ
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+
+                {{!-- <div class="mb-5 mt-3" style="max-width: 100%;">
+                    <div class="title-comment mb-3">
+                        <h2>Bình luận</h2>
+                    </div>
+                    <form action="">
+                        <div>
+                            <textarea style="max-width: 100%" class="comment-box" name="" id="" cols="105" rows="3"
+                                placeholder="Viết bình luận... (200 từ)"></textarea>
+                        </div>
+                        <div class=" text-right mt-2">
+                            <button type="button" class="btn-comment tn-primary">Đăng bình luận</button>
+                            <input type="reset" id="resetBtn" style="display: none;">
+                        </div>
+                    </form>
+
+                    <div class="comment-empty text-center" style="display: block;">
+                        <h5>Chưa có bình luận!</h5>
+                    </div>
+
+                    <div class="comment-container">
+                        <div class="comment-avatar">
+                            <div class="d-flex">
+                                <div class="comment mb-2">
+                                    <!-- JS render -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+
+            </div>
+
+            <div class="left-content col-xs-12 col-sm-12 col-lg-3 col-md-3">
+                <div class="aside_vanchuyen mb-4">
+                    <div class="aside_content">
+                        <div class="vanchuyen">
+                            <div class="icon" style="display: flex;">
+                                <img src="/img/service_1.png" alt="" style="width: 25px; height: 25px;">
+                                <p style="padding-left: 5px;">VẬN CHUYỂN MIỄN PHÍ</p>
+                            </div>
+                            <p
+                                style="font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;color: #333;">
+                                <span> - Nội thành HCM: </span> với đơn hàng trên <b> 300.000đ</b>
+                            </p>
+                            <p
+                                style="font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;color: #333;">
+                                <span> - Đặc biệt: </span> Miễn phí cho sinh viên UIT
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside_vanchuyen">
+                    <div class="aside_content">
+                        <div class="vanchuyen">
+                            <div class="icon" style="display: flex;">
+                                <img src="/img/service_2.png" alt="" style="width: 25px; height: 25px;margin-top:5px;">
+                                <p
+                                    style="font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;color: #333; padding-left: 15px;">
+                                    Giao hàng tận nơi và nhanh chóng</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="aside_vanchuyen mb-5">
+                    <div class="aside_content">
+                        <div class="vanchuyen">
+                            <div class="icon" style="display: flex;">
+                                <img src="/img/service_3.png" alt="" style="width: 15px; height: 30px;margin-top:5px;">
+                                <p
+                                    style="font-size: 14px; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;color: #333; padding-left: 15px;">
+                                    Thu tiền tại nhà, đảm bảo an toàn</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                {{!-- <div class="sidebar_extra">
+                    <div class="sidebar_title">
+                        <div class="title">
+                            <h2 class="title_sidebar">
+                                <a href="">MÓN ĂN NỔI BẬT</a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="cover_item_sidebar">
+                        <div class="item_sidebar">
+                            <div class="wrap_img">
+                                <a href="" class="img_sidebar">
+                                    <img src="" alt="">
+                                </a>
+                            </div>
+                            <div class="infor">
+                                <h3>
+                                    <a href="">
+                                        s
+                                    </a>
+                                </h3>
+                                <div class="box_price">
+                                    <span class="special_price">
+                                        <span id="price<?php echo $value[" product_id"] ?>"
+                                            class="product_price">300.000₫</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade dangnhap" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header p-2">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <div class="text-center">
+                    <h4 class="mb-3">Đăng nhập để thực hiện chức năng này</h4>
+                    <a href="">
+                        <button style="padding: 5px 10px; outline:none; border: none; border-radius: 5px;"
+                            class="btn-primary">Đăng nhập</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

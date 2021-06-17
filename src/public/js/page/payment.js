@@ -12,7 +12,6 @@ $.ajax({
     encode: true,
 }).done(function (res) {
     array = res.cart
-    console.log(array)
 })
 
 
@@ -62,7 +61,7 @@ $("#btn").click(function () {
     Email.send({
         Host: "smtp.gmail.com",
         Username: "nta.projectweb@gmail.com",
-        Password: "ngotanan123",
+        Password: "emgasolo2",
         SecureToken: "Generate token here",
         From: "nta.projectweb@gmail.com",
         To: email,
@@ -70,14 +69,13 @@ $("#btn").click(function () {
         Body: bd
     }).then(function (response) {
         if (response == 'OK') {
-            swal("Chúng tôi đã gửi hóa đơn đến email của bạn! 3 giây sau chuyển hướng đến trang chủ...", "", "success");
+            swal("Chúng tôi đã gửi hóa đơn đến email của bạn!", "", "success");
             window.setTimeout(function () {
                 window.location.href = "http://localhost:3000"
-            }, 3000);
+            }, 2000);
 
         } else {
             swal(response, "", "error");
         }
     });
-
 })
