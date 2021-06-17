@@ -43,6 +43,7 @@ function emptyCartMessage() {
     }
 }
 
+
 $("#btn_pay").click(function () {
     $.ajax({
         type: "GET",
@@ -50,17 +51,59 @@ $("#btn_pay").click(function () {
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {
-        if (res.status == true && res.logged == false) {
-            swal("Thanh toán thành công!", "", "success")
-            setTimeout(function () {
-                window.location.href = "http://localhost:3000/"
-            }, 1500)
-        } else {
-            swal("Thanh toán thành công!", "", "success")
-            setTimeout(function () {
-                window.location.href = "http://localhost:3000/account"
-            }, 1500)
-        }
+        swal("Thanh toán thành công!", "", "success")
+        var totalPrice = format(parseInt($(".total-price").html()) * 1000)
+        var item = Array.from(items).map(item => `
+                <tbody>
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>${item.quantity}</td>
+                            <td>${format(item.price)}</td>
+                        </tr>
+                </tbody>
+                `).join('');
+        var bd = `
+                <table style="width:500px; text-align:center" cellspacing=”0” cellpadding=”0” width=”640” align=”center” border=”1”>
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                        </tr>
+                    </thead>` + item + `<tfoot>
+                        <tr>
+                            <th colspan="2">
+                                <div class="text-left">
+                                    <h4 style="color: #ef7147;margin-top: 13px">Tổng tiền cần thanh toán:</h4>
+                                </div>
+                            </th>
+                            <th>
+                                <span class="pl-2" style="color: #ef7147; font-size: 18px;" id="total">${totalPrice}</span>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table> `;
+        //
+        var email = $("#email-for-bill").val();
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "nta.projectweb@gmail.com",
+            Password: "emgasolo2",
+            SecureToken: "Generate token here",
+            From: "nta.projectweb@gmail.com",
+            To: email,
+            Subject: "You've ordered from Delicious!",
+            Body: bd
+        }).then(function (response) {
+            if (response == 'OK') {
+                swal("Chúng tôi đã gửi hóa đơn đến email của bạn!", "", "success");
+                window.setTimeout(function () {
+                    window.location.href = "http://localhost:3000/"
+                }, 2000);
+            } else {
+                swal(response, "", "error");
+            }
+        });
     })
 })
 
