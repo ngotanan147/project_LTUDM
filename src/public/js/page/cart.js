@@ -52,7 +52,7 @@ $("#btn_pay").click(function () {
         encode: true,
     }).done(function (res) {
         swal("Thanh toán thành công!", "", "success")
-        var totalPrice = format(parseInt($(".total-price").html()) * 1000)
+        var totalPrice = format(parseInt($(".total-price").html()))
         var item = Array.from(items).map(item => `
                 <tbody>
                         <tr>

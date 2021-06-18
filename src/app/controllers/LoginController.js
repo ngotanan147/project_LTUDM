@@ -25,6 +25,7 @@ class LoginController {
 
     async login(req, res, next) {
         try {
+            console.log(req.body)
             const user = await User.findOne({ email: req.body.email })
             if (!user || req.body.password == user.password && user.level == 0) {
                 req.session.loggedIn = true
@@ -34,6 +35,7 @@ class LoginController {
                 res.send({ status: false, msg: 'Login failed :(' })
             }
         } catch (err) {
+            res.send({ status: false, msg: 'Login failed :(' })
             console.log(err)
             next()
         }

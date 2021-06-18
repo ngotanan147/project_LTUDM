@@ -7,7 +7,6 @@ const app = express()
 const db = require('./config/db')
 db.connect()
 
-//edit part
 const port = 3000
 
 route(app)

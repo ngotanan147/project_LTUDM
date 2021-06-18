@@ -35,7 +35,7 @@ function render(arr) {
                 <div class="item_product_main">
                     <div class="items">
                         <div class="image">
-                            <a href="">
+                            <a href="/productdetail/${item._id}">
                                 <img src="img/${item.image}" alt="" width="100%" height="250px">
                             </a>
                         </div>
@@ -53,11 +53,9 @@ function render(arr) {
                                 </div>
             
                                 <div class="text-right w-100">
-                                    <a class="" href="">
-                                        <button style="background: #ef7147; border: 1px solid #ef7147" id="btn-same" type="submit" class="btn-same btn btn-primary">
-                                            Thêm vào giỏ
-                                        </button>
-                                    </a>
+                                    <button data-id="${item._id}" style="background: #ef7147; border: 1px solid #ef7147" id="btn-same" type="submit" class="btn-same btn btn-primary">
+                                        Thêm vào giỏ
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -65,5 +63,18 @@ function render(arr) {
                 </div>
             </div>
         `)
+    })
+    $(".btn-same").click(function () {
+        const productId = $(this).attr("data-id");
+        $.ajax({
+            type: "POST",
+            url: `http://localhost:3000/cart/${productId}`,
+            contentType: 'application/json',
+            encode: true,
+        }).done(function (res) {
+            $("#cart-quantity").html(res.quantity)
+            swal("Đã thêm vào giỏ hàng!", "", "success");
+
+        })
     })
 }

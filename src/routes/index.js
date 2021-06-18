@@ -17,6 +17,7 @@ const adminRegisterRouter = require('./admin/register')
 const adminLoginRouter = require('./admin/login')
 const adminLogoutRouter = require('./admin/logout')
 const adminProductRouter = require('./admin/product')
+const adminStatistic = require('./admin/statistic')
 
 var debug = require("debug")("app.js")
 
@@ -56,6 +57,7 @@ function route(app) {
     app.use('/adminlogout', adminLogoutRouter);
     app.use('/adminuser', checkLoggedInAdmin, adminUserRouter);
     app.use('/adminproduct', checkLoggedInAdmin, adminProductRouter);
+    app.use('/adminstatistic', checkLoggedInAdmin, adminStatistic);
 
 
 }

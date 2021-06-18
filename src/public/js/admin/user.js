@@ -65,6 +65,8 @@ $('.modal-form').submit(function (e) {
         <tr id="${res.data._id}_row">
             <td class="${res.data._id}_id">${res.data._id}</td>
             <td class="${res.data._id}_email">${res.data.email}</td>
+            <td class="text-center"><img style="width: 75px; height: 75px"
+            src="img/users/${res.data.avatar}" alt=""></td>
             <td class="${res.data._id}_level">${res.data.level}</td>
             <td class="d-flex justify-content-around">
                 <a href="/adminuser/update" class="update-btn" data-id="${res.data._id}"
@@ -101,6 +103,7 @@ $(".update-form").submit(function (e) {
         encode: true,
     }).done(function (res) {
         $("." + res.data._id + "_level").html(formData.level)
+        $('#modalEdit').click()
     })
 
 })
