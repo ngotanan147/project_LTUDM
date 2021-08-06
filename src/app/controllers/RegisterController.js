@@ -1,5 +1,5 @@
 const User = require('../models/UserModel');
-const { mongooseToObject, getQuantity, checkLoginForOption } = require('../../util/mongoose.js')
+const { mongooseToObject, multipleMongooseToObject, getQuantity, checkLoginForOption } = require('../../util/mongoose.js')
 
 class RegisterController {
     index(req, res, next) {
@@ -19,9 +19,10 @@ class RegisterController {
     async register(req, res, next) {
         try {
             const formData = req.body
+            console.log(formData)
             var check = await User.find({ email: formData.email })
-            check = mongooseToObject(check)
-            if (check) {
+            check = multipleMongooseToObject(check)
+            if (check.length == 0 && formData.password.length > 5) {
                 formData.avatar = "default.jpg"
                 formData.level = 0
 

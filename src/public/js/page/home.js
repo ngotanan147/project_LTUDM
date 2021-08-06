@@ -3,12 +3,25 @@
 // }
 // { { each } }
 // $(".product-price").html(toVND(parseInt($(".product-price").html())))
+var items = []
+
+$.ajax({
+    type: "GET",
+    url: `https://ngotanan-projectweb-uit.herokuapp.com/product/getProduct`,
+    contentType: 'application/json',
+    encode: true,
+}).done(function (res) {
+    items = res.product
+    Array.from(items).forEach(item => {
+        $('.price' + item._id).html(format(parseInt($('.price' + item._id).html())))
+    })
+})
 
 $(".addToCart").click(function () {
     const productId = $(this).attr("data-id");
     $.ajax({
         type: "POST",
-        url: `http://localhost:3000/cart/${productId}`,
+        url: `https://ngotanan-projectweb-uit.herokuapp.com/cart/${productId}`,
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {

@@ -9,7 +9,7 @@ $(".addtocart").click(function () {
     const productId = $(this).attr("data-id")
     $.ajax({
         type: "POST",
-        url: `http://localhost:3000/cart/${productId}`,
+        url: `https://ngotanan-projectweb-uit.herokuapp.com/cart/${productId}`,
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {

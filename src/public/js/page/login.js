@@ -9,14 +9,14 @@ $('#form-login').submit(function (e) {
 
     $.ajax({
         type: "POST",
-        url: `http://localhost:3000/login`,
+        url: `https://ngotanan-projectweb-uit.herokuapp.com/login`,
         contentType: 'application/json',
         data: JSON.stringify(formData),
         encode: true,
     }).done(function (res) {
         console.log(res)
         if (res.status == true) {
-            window.location.href = 'http://localhost:3000/'
+            window.location.href = 'https://ngotanan-projectweb-uit.herokuapp.com/'
         } else {
             $('#login-error').html(res.msg)
             swal("Login failed :(", "", "error")

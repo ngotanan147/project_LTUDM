@@ -7,7 +7,7 @@
 // var array = []
 // $.ajax({
 //     type: "GET",
-//     url: 'http://localhost:3000/cart/getCart',
+//     url: 'https://ngotanan-projectweb-uit.herokuapp.com/cart/getCart',
 //     contentType: 'application/json',
 //     encode: true,
 // }).done(function (res) {
@@ -58,7 +58,7 @@
 //             if (response == 'OK') {
 //                 swal("Chúng tôi đã gửi hóa đơn đến email của bạn!", "", "success");
 //                 // window.setTimeout(function () {
-//                 //     window.location.href = "http://localhost:3000/"
+//                 //     window.location.href = "https://ngotanan-projectweb-uit.herokuapp.com/"
 //                 // }, 2000);
 //             } else {
 //                 swal(response, "", "error");

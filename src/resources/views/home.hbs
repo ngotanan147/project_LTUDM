@@ -41,6 +41,15 @@
             <div class="container-fluid p-5">
                 <div class="swiper-container">
                     <div id="noibac" class="swiper-wrapper" style="height:auto">
+                        <script>
+                            function format(n) {
+                                return (n * 1000).toLocaleString('vi', {
+                                    style: 'currency',
+                                    currency: 'VND'
+                                })
+                                var array = []
+                            }
+                        </script>
                         {{#each product}}
                         <div class="swiper-slide" style="max-height: 480px;">
                             <div class="image">
@@ -58,7 +67,7 @@
                                     </h3>
                                     <div class="box_price sdsdsds">
                                         <span class="special_price">
-                                            <span class="price product-price">{{this.price}}</span>
+                                            <span class="price product-price price{{this._id}}">{{this.price}}</span>
                                         </span>
                                     </div>
                                 </div>

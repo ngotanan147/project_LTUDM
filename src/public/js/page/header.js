@@ -4,7 +4,7 @@
 //     const query = $('#search-form input[name=query]').val()
 //     $.ajax({
 //         type: "GET",
-//         url: `http://localhost:3000/search/${query}`,
+//         url: `https://ngotanan-projectweb-uit.herokuapp.com/search/${query}`,
 //         contentType: 'application/json',
 //         encode: true,
 //     }).done(function (res) {

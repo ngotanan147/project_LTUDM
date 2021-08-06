@@ -7,7 +7,7 @@ function format(n) {
 
 $.ajax({
     type: "GET",
-    url: `http://localhost:3000/account/getBill`,
+    url: `https://ngotanan-projectweb-uit.herokuapp.com/account/getBill`,
     contentType: 'application/json',
     encode: true,
 }).done(function (res) {
@@ -47,7 +47,7 @@ $.ajax({
         const id = $(this).attr("data-id")
         $.ajax({
             type: "GET",
-            url: `http://localhost:3000/account/getBillDetail/${id}`,
+            url: `https://ngotanan-projectweb-uit.herokuapp.com/account/getBillDetail/${id}`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -107,7 +107,7 @@ $.ajax({
 //             }
 //             $.ajax({
 //                 type: "POST",
-//                 url: 'http://localhost:3000/account/changeAvatar',
+//                 url: 'https://ngotanan-projectweb-uit.herokuapp.com/account/changeAvatar',
 //                 data: JSON.stringify(avatar),
 //                 contentType: 'application/json',
 //                 encode: true,
@@ -124,7 +124,7 @@ $.ajax({
 //     }
 //     $.ajax({
 //         type: "POST",
-//         url: 'http://localhost:3000/account/changeAvatar',
+//         url: 'https://ngotanan-projectweb-uit.herokuapp.com/account/changeAvatar',
 //         data: JSON.stringify(formData),
 //         contentType: 'application/json',
 //         encode: true,
@@ -136,7 +136,7 @@ $.ajax({
 $('#deleteAvatar').click(function (e) {
     $.ajax({
         type: "DELETE",
-        url: 'http://localhost:3000/account',
+        url: 'https://ngotanan-projectweb-uit.herokuapp.com/account',
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {

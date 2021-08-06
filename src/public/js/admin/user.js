@@ -5,7 +5,7 @@ function deletee() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "DELETE",
-                url: `http://localhost:3000/adminuser/${id}`,
+                url: `https://ngotanan-projectweb-uit.herokuapp.com/adminuser/${id}`,
                 contentType: "application/json",
                 encode: true,
             }).done(function (res) {
@@ -53,10 +53,9 @@ $('.modal-form').submit(function (e) {
         password: $('.modal-form input[name=password]').val(),
         level: $('#select1 option:selected').val(),
     }
-    console.log(formData)
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/adminuser/create",
+        url: "https://ngotanan-projectweb-uit.herokuapp.com/adminuser/create",
         data: JSON.stringify(formData),
         contentType: 'application/json',
         encode: true,
@@ -65,6 +64,8 @@ $('.modal-form').submit(function (e) {
         <tr id="${res.data._id}_row">
             <td class="${res.data._id}_id">${res.data._id}</td>
             <td class="${res.data._id}_email">${res.data.email}</td>
+            <td class="text-center"><img style="width: 75px; height: 75px"
+            src="img/users/${res.data.avatar}" alt=""></td>
             <td class="${res.data._id}_level">${res.data.level}</td>
             <td class="d-flex justify-content-around">
                 <a href="/adminuser/update" class="update-btn" data-id="${res.data._id}"
@@ -95,12 +96,13 @@ $(".update-form").submit(function (e) {
     const id = $(".getId").html()
     $.ajax({
         type: "PUT",
-        url: `http://localhost:3000/adminuser/${id}`,
+        url: `https://ngotanan-projectweb-uit.herokuapp.com/adminuser/${id}`,
         data: JSON.stringify(formData),
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {
         $("." + res.data._id + "_level").html(formData.level)
+        $('#modalEdit').click()
     })
 
 })

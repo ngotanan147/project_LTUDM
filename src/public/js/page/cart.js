@@ -1,15 +1,4 @@
 
-var items = []
-
-$.ajax({
-    type: "GET",
-    url: `http://localhost:3000/cart/getCart`,
-    contentType: 'application/json',
-    encode: true,
-}).done(function (res) {
-    items = res.cart
-    render();
-})
 
 function format(n) {
     return (n * 1000).toLocaleString('vi', {
@@ -17,6 +6,20 @@ function format(n) {
         currency: 'VND'
     })
 }
+var items = []
+
+$.ajax({
+    type: "GET",
+    url: `https://ngotanan-projectweb-uit.herokuapp.com/cart/getCart`,
+    contentType: 'application/json',
+    encode: true,
+}).done(function (res) {
+    items = res.cart
+    render();
+})
+
+
+
 
 function remove(index) {
     items.splice(index, 1);
@@ -47,12 +50,12 @@ function emptyCartMessage() {
 $("#btn_pay").click(function () {
     $.ajax({
         type: "GET",
-        url: `http://localhost:3000/cart/pay`,
+        url: `https://ngotanan-projectweb-uit.herokuapp.com/cart/pay`,
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {
         swal("Thanh toán thành công!", "", "success")
-        var totalPrice = format(parseInt($(".total-price").html()) * 1000)
+        var totalPrice = $(".total-price").html()
         var item = Array.from(items).map(item => `
                 <tbody>
                         <tr>
@@ -98,7 +101,7 @@ $("#btn_pay").click(function () {
             if (response == 'OK') {
                 swal("Chúng tôi đã gửi hóa đơn đến email của bạn!", "", "success");
                 window.setTimeout(function () {
-                    window.location.href = "http://localhost:3000/"
+                    window.location.href = "https://ngotanan-projectweb-uit.herokuapp.com/"
                 }, 2000);
             } else {
                 swal(response, "", "error");
@@ -209,7 +212,7 @@ function render() {
 
         $.ajax({
             type: "POST",
-            url: `http://localhost:3000/cart/updateCart/${item[0]._id}/plus`,
+            url: `https://ngotanan-projectweb-uit.herokuapp.com/cart/updateCart/${item[0]._id}/plus`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -239,7 +242,7 @@ function render() {
 
         $.ajax({
             type: "POST",
-            url: `http://localhost:3000/cart/updateCart/${item[0]._id}/minus`,
+            url: `https://ngotanan-projectweb-uit.herokuapp.com/cart/updateCart/${item[0]._id}/minus`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -259,7 +262,7 @@ function render() {
 
         $.ajax({
             type: "DELETE",
-            url: `http://localhost:3000/cart/${id}/`,
+            url: `https://ngotanan-projectweb-uit.herokuapp.com/cart/${id}/`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {

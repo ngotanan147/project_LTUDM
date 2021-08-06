@@ -9,7 +9,7 @@ function renderAll() {
     return (
         $.ajax({
             type: "GET",
-            url: 'http://localhost:3000/product/getProduct',
+            url: 'https://ngotanan-projectweb-uit.herokuapp.com/product/getProduct',
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -53,7 +53,7 @@ function render(arr) {
         const productId = $(this).attr("data-id");
         $.ajax({
             type: "POST",
-            url: `http://localhost:3000/cart/${productId}`,
+            url: `https://ngotanan-projectweb-uit.herokuapp.com/cart/${productId}`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -69,7 +69,7 @@ function ajaxForSelect(value) {
     return (
         $.ajax({
             type: "GET",
-            url: `http://localhost:3000/product/getProductByCategory/${value}`,
+            url: `https://ngotanan-projectweb-uit.herokuapp.com/product/getProductByCategory/${value}`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
